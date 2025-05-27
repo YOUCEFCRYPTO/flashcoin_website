@@ -1,0 +1,15 @@
+{
+  "name": "Tether USD",
+  "symbol": "USDT",
+  "decimals": 6,
+  "description": "عملة تجريبية للتعامل مع المحافظ اللامركزية فقط، مخصصة لإنشاء مجموعات تتعامل بخدمات فيما بينها.",
+  "website": "https://youcefcrypto.github.io/FlashCoin_usdt/",
+  "explorer": "https://bscscan.com/token/0xCc50F2AFB670caC94d249725e12387D890c8149e",
+  "status": "active",
+  "id": "0xCc50F2AFB670caC94d249725e12387D890c8149e",
+  "links": {
+    "twitter": "https://x.com/Flash_Coin_usdt",
+    "telegram": "https://t.me/flashcoin_usdt",
+    "github": "https://github.com/YOUCEFCRYPTO"
+  }
+}

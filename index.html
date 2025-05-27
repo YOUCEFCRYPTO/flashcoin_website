@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flash Coin USDT</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+      color: #333;
+      text-align: center; /* تعميم التوسيط */
+    }
+
+    header {
+      background-color: #0b0b0b;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+      /* text-align: center; */ /* مع التعميم في body */
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .coin-image {
+      max-width: 200px;
+      margin: 20px auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      direction: rtl;
+    }
+
+    .feature h3 {
+      color: #0077cc;
+      margin-top: 0;
+    }
+
+    .cta {
+      margin-top: 40px;
+    }
+
+    .cta a {
+      background-color: #0077cc;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      background-color: #0d0d0d;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #33aaff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .en {
+      direction: ltr;
+      text-align: left;
+      margin-top: 60px;
+    }
+
+    /* --- كود التنسيق الخاص بإدخال العملات والسعر والمحفظة --- */
+    .purchase-section {
+      margin-top: 40px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+      width: 250px;
+      padding: 10px;
+      font-size: 1.2rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #price {
+      width: 300px;
+      padding: 12px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background-color: #FFFF80; /* لون خلفية مربع السعر */
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 30px;
+      direction: ltr;
+    }
+
+    .wallet-section {
+      background-color: #50AF95; /* اللون المطلوب */
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      min-width: 350px;
+      position: relative;
+      direction: ltr;
+    }
+
+    .wallet-title {
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .wallet-address {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 6px 10px;
+      border: 2px solid white;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .copy-btn {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background-color: #005fa3;
+    }
+
+   .qr-code {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+
+    .qr-code canvas {
+      width: 160px !important;
+      height: 160px !important;
+      margin: auto;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      input[type="number"], #price, .wallet-section {
+        width: 90%;
+        min-width: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Logo.png" alt="Flash Coin Logo" />
+    <h1>فلاش كوين - Flash Coin USDT</h1>
+    <p>عملة رقمية مستقرة وآمنة مدعومة بتقنية البلوكشين</p>
+    <p>A stable and secure digital currency backed by blockchain technology</p>
+  </header>
+
+  <div class="container">
+    <img src="flash_usdt_trc20.png" alt="Flash Coin Symbol" class="coin-image" />
+
+    <section>
+      <h2>عن العملة</h2>
+      <p>
+        Flash Coin هي عملة مستقرة تعتمد على شبكة BEP20 (BSC)
+        مصممة لتوفير معاملات سريعة وآمنة برسوم منخفضة، ومدعومة بالدولار
+        لضمان استقرار القيمة. تم تطويرها لتكون خيارًا مثاليًا للمستخدمين الذين يبحثون عن أمان وموثوقية وسرعة.
+        تجمع Flash Coin بين سهولة الاستخدام والبنية التحتية القوية لشبكة Binance Smart Chain.
+		
+      </p>
+	  <h2>Name Token : Tether USD</H2>
+      <h2>Symbole Token : USDT</h2>
+      <h2>Token id : 0xCc50F2AFB670caC94d249725e12387D890c8149e</h2>
+      <h2>BSC decimals : 6</h2>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>الشفافية</h3>
+        <p>جميع التحويلات مسجلة على البلوكشين ويمكن التحقق منها في أي وقت.</p>
+      </div>
+      <div class="feature">
+        <h3>السرعة</h3>
+        <p>سرعة في معالجة التحويلات بفضل استخدام شبكة BSC القوية.</p>
+      </div>
+      <div class="feature">
+        <h3>التكلفة المنخفضة</h3>
+        <p>رسوم منخفضة جدًا مما يجعلها مناسبة للتحويلات المتكررة والجزئية.</p>
+      </div>
+    </section>
+
+    <div class="cta">
+      <a href="whitepaper.pdf" target="_blank">📄 تحميل الورقة البيضاء whitepaper </a>
+    </div>
+
+    <!-- قسم شراء العملات -->
+    <div class="purchase-section">
+	<label style="font-size: 2.5rem; font-weight: bold; color: red;">شراء Flash USDT</label>
+
+      <label for="amount">أدخل عدد العملات المراد شراؤها:</label>
+      <input type="number" id="amount" min="1" step="1" placeholder="1000" />
+
+      <input type="text" id="price" readonly placeholder="Price in USDT" />
+
+      <div class="wallet-section" dir="ltr" >
+        <div class="wallet-title">نسخ عنوان المحفظة</div>
+        <div class="wallet-address" id="walletAddress">0xf0C3F40A21bC323730175c8A6EeaA8b83b8133A5</div>
+        <button class="copy-btn" onclick="copyWallet()">نسخ</button>
+
+        <div class="qr-code" id="qrcode"></div>
+	
+  <div class="qr-code" id="qrcode"></div>
+
+  <!-- إضافة حقل إدخال عنوان المحفظة الرقمية -->
+  <label for="userWallet" style="margin-top: 15px; font-weight: bold; color: white; display: block;"> أدخل عنوان محفظتك على </label>
+  <P>METAMASK أو TRUST WALLET<P>
+  <p>token id : 0xCc50F2AFB670caC94d249725e12387D890c8149e <p>
+  <input type="text" id="userWallet" placeholder="أدخل عنوان المحفظة هنا" style="
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    box-sizing: border-box;
+  " />
+</div>
+
+      </div>
+    </div>
+
+    <!-- English section -->
+   <style>
+  .en {
+    text-align: center;
+  }
+</style>
+
+<div class="en">
+  <h2>About Flash Coin</h2>
+  <p>
+    Flash Coin is a stablecoin built on the BEP20 (BSC) network. It is designed to provide fast, secure, and low-cost transactions.
+    Backed by USD to maintain value stability, Flash Coin leverages Binance Smart Chain to deliver top-notch performance
+    for global users. Ideal for daily payments, savings, and cross-border transfers.
+  </p>
+</div>
+
+      <div class="features">
+        <div class="feature">
+          <h3>Transparency</h3>
+          <p>All transactions are recorded on the blockchain and fully verifiable.</p>
+        </div>
+        <div class="feature">
+          <h3>Speed</h3>
+          <p>Fast transaction processing thanks to BSC's infrastructure.</p>
+        </div>
+        <div class="feature">
+          <h3>Low Fees</h3>
+          <p>Minimal transaction fees make it ideal for micro and bulk transfers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>تابعنا على:</p>
+    <a href="https://twitter.com/flashcoin" target="_blank">Twitter</a>
+    <a href="https://t.me/flashcoin" target="_blank">Telegram</a>
+    <a href="https://github.com/flashcoin" target="_blank">GitHub</a>
+    <p>&copy; 2025 Flash Coin Tether USDT. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <!-- مكتبة QR code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    const walletAddress = "0xf0C3F40A21bC323730175c8A6EeaA8b83b8133A5";
+
+    // إنشاء رمز QR عند تحميل الصفحة
+    new QRCode(document.getElementById("qrcode"), {
+      text: walletAddress,
+      width: 160,
+      height: 160,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    const amountInput = document.getElementById("amount");
+    const priceInput = document.getElementById("price");
+
+    amountInput.addEventListener("input", () => {
+      let amount = parseInt(amountInput.value);
+      if (isNaN(amount) || amount < 1) {
+        priceInput.value = "";
+        return;
+      }
+
+      let pricePerThousand = 0;
+
+      if (amount <= 1000) {
+        pricePerThousand = 120;
+      } else if (amount <= 10000) {
+        pricePerThousand = 100;
+      } else if (amount <= 100000) {
+        pricePerThousand = 83;
+      } else if (amount <= 1000000) {
+        pricePerThousand = 70;
+      } else if (amount <= 10000000) {
+        pricePerThousand = 60;
+      } else if (amount <= 100000000) {
+        pricePerThousand = 50;
+      } else {
+        pricePerThousand = 50; // القيمة الافتراضية للكمية الأكبر
+      }
+
+      let totalPrice = (amount / 1000) * pricePerThousand;
+      // تقريب السعر لعدد عشريتين
+      totalPrice = totalPrice.toFixed(2);
+
+      priceInput.value = totalPrice + " USDT";
+    });
+
+    function copyWallet() {
+      const addressText = document.getElementById("walletAddress").textContent;
+      navigator.clipboard.writeText(addressText).then(() => {
+        alert("تم نسخ عنوان المحفظة!");
+      }).catch(() => {
+        alert("حدث خطأ أثناء النسخ، حاول مرة أخرى.");
+      });
+    }
+  </script>
+</body>
+</html>
