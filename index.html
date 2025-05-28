@@ -274,7 +274,7 @@
       <input type="text" id="price" readonly placeholder="Price in USDT" />
 
       <div class="wallet-section" dir="ltr" >
-        <div class="wallet-title">نسخ عنوان المحفظة</div>
+        <div class="wallet-title">في المحفظة التالية (usdt) أرسل </div>
         <div class="wallet-address" id="walletAddress">0xf0C3F40A21bC323730175c8A6EeaA8b83b8133A5</div>
         <button class="copy-btn" onclick="copyWallet()">نسخ</button>
 
@@ -283,22 +283,21 @@
   <div class="qr-code" id="qrcode"></div>
 
   <!-- إضافة حقل إدخال عنوان المحفظة الرقمية -->
-  <label for="userWallet" style="margin-top: 15px; font-weight: bold; color: white; display: block;"> أدخل عنوان محفظتك على </label>
-  <P>METAMASK أو TRUST WALLET<P>
-  <p>token id : 0xCc50F2AFB670caC94d249725e12387D890c8149e <p>
-  <input type="text" id="userWallet" placeholder="أدخل عنوان المحفظة هنا" style="
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-    font-size: 1rem;
-    box-sizing: border-box;
-  " />
+ <label for="userWallet" style="margin-top: 15px; font-weight: bold; color: yellow; display: block;">
+  سيتم إرسال عملات الفلاش
+</label>
+
+<p style="color: yellow;">USDT على العنوان الذي أرسلت منه</p>
+
+
+
 </div>
 
       </div>
     </div>
+<p style="color: red; font-weight: bold;">أدخل عنوان تعريف العملة للإضافة العملة في محفظتك</p>
 
+<p style="color: red; font-weight: bold;">Token id : 0xCc50F2AFB670caC94d249725e12387D890c8149e</p>
     <!-- English section -->
    <style>
   .en {
