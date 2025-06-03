@@ -371,11 +371,14 @@
 
     amountInput.addEventListener("input", () => {
       let amount = parseInt(amountInput.value);
-      if (isNaN(amount) || amount < 100) {
+      if (isNaN(amount) || amount < 100 || amount > 99910000) {
         priceInput.value = "أقل كمية 100 فلاش";
-        return;
+    	if (amount > 99910000) {	
+		priceInput.value = "أكبر كمية 99910000 فلاش";
+        
       }
-
+	  return;
+      }
       let pricePerThousand = 0;
 
       if (amount <= 1000) {
